@@ -1,0 +1,135 @@
+
+# 📱 Social Sorting App – Full Outline
+
+## 1. **User & Organization Structure**
+
+* **User Accounts**
+
+  * Sign up/login (email, SSO, or invite link).
+  * User profile with name, photo, interests, role.
+* **Organizations**
+
+  * Each user belongs to one (or multiple?) organizations.
+  * Org admins can manage members (invite/remove).
+  * Privacy: Only members see their org’s content.
+
+---
+
+## 2. **Home Feed (Photo Feed)**
+
+* **Main Features**
+
+  * Scrollable feed of photos uploaded by org members.
+  * Photos are tagged with:
+
+    * **Users** (who’s in the photo).
+    * **Organization** (auto-tagged).
+  * Like/react and comment on photos.
+* **Privacy/Access**
+
+  * Only people in the org can see its feed.
+* **Photo Upload Flow**
+
+  * Add caption, tag members, tag hangout (weekly task or additional hangout).
+  * Option to upload multiple photos at once.
+
+---
+
+## 3. **Weekly Survey & Pairing**
+
+* **Survey Prompt**
+
+  * Small set of rotating questions (preferences, moods, interests).
+  * App notifies users weekly to complete it.
+* **Pair Generation**
+
+  * Algorithm matches pairs (or small groups) with similar answers.
+  * Each user is paired only once per week.
+* **Assigned Task**
+
+  * Randomized or curated “icebreaker”/team-building task.
+  * Example: “Grab coffee together,” “Take a photo on campus,” etc.
+* **Integration**
+
+  * After completing the task, users can upload their photo to the feed.
+
+---
+
+## 4. **Hangouts**
+
+* **Weekly Set Hangout**
+
+  * Automatically assigned by survey/pairing system.
+* **Additional Hangout**
+
+  * Users can schedule an extra meetup with anyone in the org.
+  * They can tag that user and upload a photo for it.
+  * Keeps distinction clear: *weekly pairing vs. spontaneous hangout*.
+
+---
+
+## 5. **Analytics & Tracking**
+
+* **For Each User**
+
+  * Calendar view of photos uploaded.
+  * Stats like:
+
+    * # of tasks completed.
+    * # of hangouts added.
+    * # of photos uploaded per week/month.
+* **For Org Admins (optional)**
+
+  * High-level analytics (engagement, participation).
+  * Could be anonymized or aggregated to respect privacy.
+
+---
+
+## 6. **Notifications & Engagement**
+
+* Weekly survey reminder.
+* New photo uploaded by a tagged friend.
+* Hangout/task completion reminders.
+* Optional push notifications or email digests.
+
+---
+
+## 7. **Admin & Moderation**
+
+* Org admins can:
+
+  * Approve/remove content if needed.
+  * Manage membership.
+* Reporting/blocking mechanism for photos or users.
+
+---
+
+## 8. **Technical/UX Details**
+
+* **Tabs/Navigation**
+
+  * Home Feed
+  * Weekly Survey / Pairing
+  * Analytics
+  * Profile
+* **Design Considerations**
+
+  * Mobile-first design (social apps skew toward mobile).
+  * Easy photo tagging and upload flow.
+  * Gamification elements (badges for task completion streaks, etc.).
+
+---
+
+## 9. **Possible Future Features**
+
+* **Group Pairings** (instead of strict pairs).
+* **Chat/Messaging** for pairs to coordinate.
+* **Themed Weeks** (special survey or tasks around holidays/events).
+* **Cross-Org Challenges** (if scaling beyond one org).
+* **Integration** with calendars (auto-schedule pair hangouts).
+
+---
+
+✅ With this outline, your app flows like this:
+**Join org → Weekly survey → Paired + given task → Hangout & photo → Shared on feed → Analytics for tracking → Repeat.**
+
