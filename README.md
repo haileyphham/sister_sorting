@@ -57,6 +57,21 @@ npm run dev
 curl http://localhost:5001/api/health
 ```
 
+## Free port 5001
+```bash
+# see who’s using it
+docker ps --format '{{.ID}}\t{{.Names}}\t{{.Ports}}' | grep 5001
+
+# if your prod container is running, stop & remove it
+docker stop sister-backend 2>/dev/null || true
+docker rm   sister-backend 2>/dev/null || true
+
+# double-check nothing else is on 5001 (macOS host)
+lsof -ti tcp:5001 | xargs -r kill -9
+
+```
+
+
 ## Migrations (Drizzle)
 
 ```bash
