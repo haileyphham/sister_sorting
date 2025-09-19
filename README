@@ -1,33 +1,29 @@
-##Sister Sorting – Backend
+# Sister Sorting – Backend
 
 Express.js REST API for the Social/Sister Sorting app. Uses PostgreSQL (Neon or any Postgres) and Drizzle ORM. Containerized with Docker for consistent local runs.
 
-**Tech Stack**
+## Tech Stack
+- **Backend:** Node.js + Express
+- **DB:** PostgreSQL (Neon-friendly)
+- **ORM/Migrations:** Drizzle
+- **Containers:** Docker + Docker Compose
 
-Backend: Node.js + Express
+## Prerequisites
+- **Docker Desktop** (includes Compose)
 
-DB: PostgreSQL (Neon-friendly)
+**URL:** `http://localhost:5001`
 
-ORM/Migrations: Drizzle
-
-Containers: Docker + Docker Compose
-
-**Prerequisites**
-
-Docker Desktop (includes Compose)
-
-URL: http://localhost:5001
-
-**Quick Start (Docker)**
+## Quick Start (Docker)
 ```bash
 git clone <YOUR_REPO_URL> && cd <YOUR_REPO_NAME>
 cp backend/.env.example backend/.env   # fill values
 docker compose up --build
-# health check:
-curl http://localhost:5001/api/health
-```
 
-**Run Locally (no Docker)**
+# health check
+curl http://localhost:5001/api/health
+
+
+## Run Locally (no Docker)
 ```bash
 cd backend
 npm i
@@ -36,7 +32,7 @@ npm run dev
 curl http://localhost:5001/api/health
 ```
 
-**Migrations (Drizzle)**
+## Migrations (Drizzle)
 ```bash
 # with Docker
 docker compose exec backend npx drizzle-kit migrate
@@ -45,20 +41,20 @@ docker compose exec backend npx drizzle-kit migrate
 cd backend && npx drizzle-kit migrate
 ```
 
-**Useful**
+## Useful
 ```bash
 docker compose logs -f backend
 docker compose down
 ```
 
-**Env Example (backend/.env.example)**
+## Env Example (backend/.env.example)
 ```bash
 PORT=5001
 DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DBNAME?sslmode=require
 JWT_SECRET=replace-me
 ```
 
-**Notes**
+## Notes
 
 Don’t commit secrets (backend/.env is gitignored).
 
