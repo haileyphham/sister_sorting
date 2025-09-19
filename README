@@ -2,59 +2,57 @@
 
 Express.js REST API for the Social/Sister Sorting app. Uses PostgreSQL (Neon or any Postgres) and Drizzle ORM. Containerized with Docker for consistent local runs.
 
-## Tech Stack
-- **Backend:** Node.js + Express
-- **DB:** PostgreSQL (Neon-friendly)
-- **ORM/Migrations:** Drizzle
-- **Containers:** Docker + Docker Compose
+Tech Stack
 
-## Prerequisites
-- **Docker Desktop** (includes Compose)
+Backend: Node.js + Express
 
-**URL:** `http://localhost:5001`
+DB: PostgreSQL (Neon-friendly)
 
-## Quick Start (Docker)
-```bash
+ORM/Migrations: Drizzle
+
+Containers: Docker + Docker Compose
+
+Prerequisites
+
+Docker Desktop (includes Compose)
+
+URL: http://localhost:5001
+
+Quick Start (Docker)
 git clone <YOUR_REPO_URL> && cd <YOUR_REPO_NAME>
 cp backend/.env.example backend/.env   # fill values
 docker compose up --build
 
 # health check
 curl http://localhost:5001/api/health
-
+```
 
 ## Run Locally (no Docker)
-```bash
+
+Run Locally (no Docker)
 cd backend
 npm i
 cp .env.example .env   # fill values
 npm run dev
 curl http://localhost:5001/api/health
-```
 
-## Migrations (Drizzle)
-```bash
+Migrations (Drizzle)
 # with Docker
 docker compose exec backend npx drizzle-kit migrate
 
 # or locally
 cd backend && npx drizzle-kit migrate
-```
 
-## Useful
-```bash
+Useful
 docker compose logs -f backend
 docker compose down
-```
 
-## Env Example (backend/.env.example)
-```bash
+Env Example (backend/.env.example)
 PORT=5001
 DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DBNAME?sslmode=require
 JWT_SECRET=replace-me
-```
 
-## Notes
+Notes
 
 Don’t commit secrets (backend/.env is gitignored).
 
