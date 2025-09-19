@@ -19,6 +19,7 @@ Express.js REST API for the Social/Sister Sorting app. Uses PostgreSQL (Neon or 
 
 to start:
 ```bash
+open -a Docker
 docker compose up --build
 # in another terminal (optional)
 curl http://localhost:5001/api/health
