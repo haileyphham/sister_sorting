@@ -15,15 +15,36 @@ Express.js REST API for the Social/Sister Sorting app. Uses PostgreSQL (Neon or 
 
 **URL:** `http://localhost:5001`
 
-## Quick Start (Docker)
+## Dev with Docker Compose (hot reload)
 
+to start:
 ```bash
-git clone <YOUR_REPO_URL> && cd <YOUR_REPO_NAME>
-cp backend/.env.example backend/.env   # fill values
 docker compose up --build
+# in another terminal (optional)
+curl http://localhost:5001/api/health
+```
+to stop:
+```bash
+docker compose down
+```
+## Prod-style (run the built image)
+
+to start:
+```bash
+# build the production image
+docker build -t sister-backend:prod -f backend/Dockerfile backend
+
+# run it (detached) with your env file
+docker run -d --name sister-backend -p 5001:5001 --env-file backend/.env sister-backend:prod
 
 # health check
 curl http://localhost:5001/api/health
+
+```
+view logs / stop:
+```bash
+docker logs -f sister-backend
+docker stop sister-backend && docker rm sister-backend
 ```
 
 ## Run Locally (no Docker)
