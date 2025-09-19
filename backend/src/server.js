@@ -5,7 +5,7 @@ import * as schema from "./db/schema.js";
 import { eq } from "drizzle-orm";
 
 const app = express();
-const PORT = ENV.PORT || 5002; // ✅ stick to 5002 for now since it works
+const PORT = ENV.PORT || 5001; 
 
 app.use(express.json());
 
@@ -42,11 +42,11 @@ app.post("/api/users", async (req, res) => {
       .returning();
     res.status(201).json(user);
   } catch (error) {
-    console.error("Error creating user:", error); // 👈 log the real cause
-    res.status(500).json({ error: error.message }); // 👈 send back error detail
+    console.error("Error creating user:", error); 
+    res.status(500).json({ error: error.message }); 
   }
 });
-
+ 
 
 // Get one user
 app.get("/api/users/:id", async (req, res) => {
