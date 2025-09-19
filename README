@@ -1,0 +1,58 @@
+Sister Sorting – Backend
+
+Express.js REST API for the Social/Sister Sorting app. Uses PostgreSQL (Neon or any Postgres) and Drizzle ORM. Containerized with Docker for consistent local runs.
+
+Tech Stack
+
+Backend: Node.js + Express
+
+DB: PostgreSQL (Neon-friendly)
+
+ORM/Migrations: Drizzle
+
+Containers: Docker + Docker Compose
+
+Prerequisites
+
+Docker Desktop (includes Compose)
+
+URL: http://localhost:5001
+
+Quick Start (Docker)
+git clone <YOUR_REPO_URL> && cd <YOUR_REPO_NAME>
+cp backend/.env.example backend/.env   # fill values
+docker compose up --build
+# health check:
+curl http://localhost:5001/api/health
+
+Run Locally (no Docker)
+cd backend
+npm i
+cp .env.example .env   # fill values
+npm run dev
+curl http://localhost:5001/api/health
+
+Migrations (Drizzle)
+# with Docker
+docker compose exec backend npx drizzle-kit migrate
+
+# or locally
+cd backend && npx drizzle-kit migrate
+
+Useful
+docker compose logs -f backend
+docker compose down
+
+Env Example (backend/.env.example)
+PORT=5001
+DATABASE_URL=postgresql://USER:PASSWORD@HOST:5432/DBNAME?sslmode=require
+JWT_SECRET=replace-me
+
+Notes
+
+Don’t commit secrets (backend/.env is gitignored).
+
+If port 5001 is busy: change compose to ports: ["5002:5001"] or free it:
+lsof -ti tcp:5001 | xargs kill -9.
+
+Ensure server binds to 0.0.0.0 in Docker.
